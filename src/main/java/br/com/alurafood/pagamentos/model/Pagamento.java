@@ -1,8 +1,8 @@
 package br.com.alurafood.pagamentos.model;
 
+
 import java.math.BigDecimal;
 
-import ch.qos.logback.core.status.Status;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
@@ -20,14 +20,14 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Table (name = "pagamentos")
+@Table(name = "pagamentos")
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
 
 public class Pagamento {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
@@ -35,19 +35,19 @@ public class Pagamento {
 	@Positive
 	private BigDecimal valor;
 	@NotBlank
-	@Size(max=100)
+	@Size(max = 100)
 	private String nome;
 	@NotBlank
-	@Size(max=19)
+	@Size(max = 19)
 	private String numero;
 	@NotBlank
-	@Size(max=7)
+	@Size(max = 7)
 	private String expiracao;
 	@NotBlank
-	@Size(min=3, max=3)
+	@Size(min = 3, max = 3)
 	private String codigo;
 	@NotNull
-	@Enumerated(EnumType.STRING )
+	@Enumerated(EnumType.STRING)
 	private Status status;
 	@NotNull
 	private Long pedidoId;
