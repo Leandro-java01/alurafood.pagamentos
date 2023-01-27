@@ -1,17 +1,16 @@
 package br.com.alurafood.pagamentos.dto;
 
-import java.io.ObjectInputFilter.Status;
 import java.math.BigDecimal;
 
+import jakarta.transaction.Status;
 import lombok.Getter;
 import lombok.Setter;
-
 
 @Setter
 @Getter
 
 public class PagamentoDto {
-	
+
 	private Long id;
 	private BigDecimal valor;
 	private String nome;
